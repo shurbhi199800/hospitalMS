@@ -86,7 +86,7 @@
 
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li onclick="check_active('Home')"><a id="Home" href="{{ url('/') }}">Home v0.333333</a></li>
+                            <li onclick="check_active('Home')"><a id="Home" href="{{ url('/') }}">Home v0.2</a></li>
                             <li onclick="check_active('Services')"><a id="Services" data-scroll
                                     href="{{ url('/services') }}">Services</a></li>
                             <li onclick="check_active('Doctors')"><a id="Doctors" data-scroll
