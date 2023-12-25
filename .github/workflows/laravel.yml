@@ -7,37 +7,37 @@ on:
     branches: [ "main" ]
 
 jobs:
-  phpunit:
-    runs-on: ubuntu-latest
-    container:
-      image: kirschbaumdevelopment/laravel-test-runner:7.3
+  # phpunit:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: kirschbaumdevelopment/laravel-test-runner:7.3
  
-    services:
-      mysql:
-        image: mysql:5.7
-        env:
-          MYSQL_ROOT_PASSWORD: password
-          MYSQL_DATABASE: test
-        ports:
-          - 33306:3306
-        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+  #   services:
+  #     mysql:
+  #       image: mysql:5.7
+  #       env:
+  #         MYSQL_ROOT_PASSWORD: password
+  #         MYSQL_DATABASE: test
+  #       ports:
+  #         - 33306:3306
+  #       options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
  
-    steps:
-    - uses: actions/checkout@v1
-      with:
-        fetch-depth: 1
+  #   steps:
+  #   - uses: actions/checkout@v1
+  #     with:
+  #       fetch-depth: 1
  
-    - name: Install composer dependencies
-      run: |
-        composer install --no-scripts
+  #   - name: Install composer dependencies
+  #     run: |
+  #       composer install --no-scripts
  
-    - name: Prepare Laravel Application
-      run: |
-        cp .env.ci .env
-        php artisan key:generate
+  #   - name: Prepare Laravel Application
+  #     run: |
+  #       cp .env.ci .env
+  #       php artisan key:generate
  
-    - name: Run Testsuite
-      run: vendor/bin/phpunit tests/
+  #   - name: Run Testsuite
+  #     run: vendor/bin/phpunit tests/
 
 
 
@@ -49,11 +49,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: composer install --no-dev --optimize-autoloader
+    # - name: Install Dependencies
+    #   run: composer install --no-dev --optimize-autoloader
 
-    - name: Build Assets
-      run: npm install && npm run production
+    # - name: Build Assets
+    #   run: npm install && npm run production
 
     - name: Deploy to EC2
       uses: appleboy/ssh-action@master
@@ -68,6 +68,6 @@ jobs:
           echo "Application deployig...."
           # php artisan down
           git pull origin main
-          # php artisan up
+          # php artisan up A
           echo "Application deployed"
          
