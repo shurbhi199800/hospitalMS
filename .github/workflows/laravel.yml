@@ -65,8 +65,8 @@ jobs:
           cd /usr/share/nginx/html
           # sudo chown -R ec2-user:ec2-user /usr/share/nginx/html/
           sudo chown -R ec2-user:nginx /usr/share/nginx/html/
-          sudo chmod -R 755 /usr/share/nginx/html/storage
-          sudo chmod -R 755 /usr/share/nginx/html/bootstrap/cache
+          sudo chmod -R 0777 /usr/share/nginx/html/storage
+          sudo chmod -R 0777 /usr/share/nginx/html/bootstrap/cache
           set -e
           echo "Application deployig...."
           # php artisan down
