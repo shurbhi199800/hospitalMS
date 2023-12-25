@@ -65,8 +65,8 @@ jobs:
           cd /usr/share/nginx/html
           set -e
           echo "Application deploying...."
-          php artisan down
+          # php artisan down
           git pull origin main
-          php artisan up
+          # php artisan up
           echo "Application deployed"
          
