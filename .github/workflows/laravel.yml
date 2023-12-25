@@ -62,7 +62,8 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          
-          git init
-          git pull origin main
+          pwd
+          ls
+          # git init
+          # git pull origin main
           # php artisan migrate --force
