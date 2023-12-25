@@ -62,9 +62,5 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          cd laravelapp
-          pwd
-          git init
-          git pull origin main
-          composer install --no-dev --optimize-autoloader
-          php artisan migrate --force
+          'cd /usr/share/nginx/html && ./server_deploy.sh'
+         
