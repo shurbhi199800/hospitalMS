@@ -62,7 +62,7 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          cd /usr/share/nginx/html
+          cd /usr/share/nginx/html/hospitalMS
           set -e
           echo "Application deployigggggggggg...."
           # php artisan down
