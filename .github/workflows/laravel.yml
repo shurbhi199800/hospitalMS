@@ -64,7 +64,7 @@ jobs:
         script: |
           cd /usr/share/nginx/html/hospitalMS
           set -e
-          echo "Application deployigggggggggg...."
+          echo "Application deployig...."
           # php artisan down
           git pull origin main
           # php artisan up
