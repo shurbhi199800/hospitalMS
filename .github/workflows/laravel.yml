@@ -63,5 +63,6 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
           cd /
+          git init
           git pull origin main
-          php artisan migrate --force
+          # php artisan migrate --force
