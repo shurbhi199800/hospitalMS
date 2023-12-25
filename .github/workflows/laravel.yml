@@ -63,6 +63,8 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
           pwd
+          cd laravelapp
+          pwd
           ls
           # git init
           # git pull origin main
