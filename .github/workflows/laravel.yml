@@ -62,7 +62,6 @@ jobs:
         username: ${{ secrets.EC2_USERNAME }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          echo secrets.EC2_HOST
           cd /usr/share/nginx/html
           # sudo chown -R ec2-user:ec2-user /usr/share/nginx/html/
           sudo chown -R ec2-user:nginx /usr/share/nginx/html/
@@ -85,14 +84,14 @@ jobs:
         key: ${{ secrets.EC2_PRIVATE_KEY1 }}
         script: |
           cd /var/www/html
-          # sudo chown -R ec2-user:ec2-user /var/www/html/
-          sudo chown -R ubuntu:nginx /var/www/html/
-          sudo chmod -R 0777 /var/www/html/storage
-          sudo chmod -R 0777 /var/www/html/bootstrap/cache
-          #set -e
+          sudo chown -R ubuntu:ubuntu /var/www/html/
+          set -e
           echo "Application deployig...."
           # php artisan down
           git pull origin main
           # php artisan up A
+          sudo chmod -R 0777 /var/www/html/storage
+          sudo chmod -R 0777 /var/www/html/bootstrap/cache
+          sudo chown -R www-data:www-data /var/www/html/
           echo "Application deployed"
          
