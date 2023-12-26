@@ -75,13 +75,6 @@ jobs:
           # php artisan up A
           echo "Application deployed"
     
-    - name: Debugging SSH
-      run: |
-        echo "SSH Connection Debug:"
-        echo "Host: ***"
-        echo "Port: 22"
-        echo "Command: ssh -v -i /path/to/private-key user@***"
-        ssh -v -i /path/to/private-key user@***
         
 
     - name: Deploy to Server2
