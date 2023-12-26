@@ -90,7 +90,7 @@ jobs:
           set -e
           echo "Application deployig...."
           # php artisan down
-          git pull origin main
+          #git pull origin main
           # php artisan up A
           sudo chmod -R 0777 /var/www/html/storage
           sudo chmod -R 0777 /var/www/html/bootstrap/cache
