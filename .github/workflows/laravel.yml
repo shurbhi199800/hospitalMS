@@ -67,12 +67,21 @@ jobs:
           sudo chown -R ec2-user:nginx /usr/share/nginx/html/
           sudo chmod -R 0777 /usr/share/nginx/html/storage
           sudo chmod -R 0777 /usr/share/nginx/html/bootstrap/cache
-          set -e
+          #set -e
           echo "Application deployig...."
           # php artisan down
           git pull origin main
           # php artisan up A
           echo "Application deployed"
+    
+    - name: Debugging SSH
+      run: |
+        echo "SSH Connection Debug:"
+        echo "Host: ***"
+        echo "Port: 22"
+        echo "Command: ssh -v -i /path/to/private-key user@***"
+        ssh -v -i /path/to/private-key user@***
+        
 
     - name: Deploy to Server2
       uses: appleboy/ssh-action@master
@@ -86,7 +95,7 @@ jobs:
           sudo chown -R ubuntu:nginx /var/www/html/
           sudo chmod -R 0777 /var/www/html/storage
           sudo chmod -R 0777 /var/www/html/bootstrap/cache
-          set -e
+          #set -e
           echo "Application deployig...."
           # php artisan down
           git pull origin main
